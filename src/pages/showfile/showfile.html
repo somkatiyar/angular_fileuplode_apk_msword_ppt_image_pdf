@@ -1,0 +1,234 @@
+
+<button mat-button id="addFile" [routerLink]="['/filelode']">+AddFile</button>
+
+
+
+
+<!-- for apk -->
+
+
+
+  <mat-accordion>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+
+    <mat-panel-title>
+        <img mat-card-avatar src="/assets/APK_format_icon.png">
+        <div class="titlediv">Apk</div>
+  </mat-panel-title>
+
+  </mat-expansion-panel-header>
+
+    <div *ngFor="let i of apk">
+
+
+  <mat-card class="example-card">
+
+
+      <mat-card-title >{{"ProjectName : "+i.projectName}}</mat-card-title>
+      <mat-card-title >{{"DateCreated :"+i.dateCreated  }}</mat-card-title>
+      <div class="btndiv">
+        <img src="/assets/delete.png"  alt="" class="btndesign" download=""   (click)="delete(i._id,i.fileType)" >
+        <img src="/assets/edit.png" alt="" class="btndesign"    (click)="update(i._id)" >
+        <!-- <img src="/assets/downlode.png" alt="" class="btndesign"    (click)="downlode(i.fileName)" > -->
+        <a href="{{downLodeFile}}"  (click)="downlode(i.fileName)" download>download</a>
+
+      </div>
+
+  </mat-card >
+
+
+</div>
+
+
+
+</mat-expansion-panel>
+
+
+ </mat-accordion>
+
+<!-- for pdf -->
+
+  <mat-accordion>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+
+    <mat-panel-title>
+        <img mat-card-avatar src="/assets/pdf.png">
+            <div class="titlediv">Pdf</div>
+
+    </mat-panel-title>
+
+
+  </mat-expansion-panel-header>
+
+    <div *ngFor="let i of pdf">
+
+  <mat-card class="example-card">
+
+
+      <mat-card-title >{{"FileName : "+i.fileName}}</mat-card-title>
+      <mat-card-title >{{"DateCreated :"+i.dateCreated}}</mat-card-title>
+
+     <div class="btndiv">
+        <img src="/assets/delete.png"  alt="" class="btndesign"    (click)="delete(i._id,i.fileType)" >
+        <img src="/assets/edit.png" alt="" class="btndesign"    (click)="update(i._id)" >
+        <!-- <img src="/assets/downlode.png" alt="" class="btndesign"    (click)="downlode(i.fileName)" > -->
+        <a href="{{downLodeFile}}"  (click)="downlode(i.fileName)" download>download</a>
+
+      </div>
+
+  </mat-card >
+
+
+</div>
+
+
+
+</mat-expansion-panel>
+
+
+</mat-accordion>
+
+
+
+
+<!-- for image -->
+
+  <mat-accordion>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+
+    <mat-panel-title>
+            <img mat-card-avatar src="/assets/image.png">
+                <div class="titlediv">Image</div>
+
+    </mat-panel-title>
+
+
+  </mat-expansion-panel-header>
+
+    <div *ngFor="let i of image">
+
+  <mat-card class="example-card">
+
+
+      <mat-card-title >{{"FileName : "+i.fileName}}</mat-card-title>
+      <mat-card-title >{{"DateCreated :"+i.dateCreated}}</mat-card-title>
+
+      <div class="btndiv">
+
+        <img src="/assets/delete.png"  alt="" class="btndesign"    (click)="delete(i._id,i.fileType)" >
+        <img src="/assets/edit.png" alt="" class="btndesign"    (click)="update(i._id)" >
+        <!-- <img src="/assets/downlode.png" alt="" class="btndesign"    (click)="downlode(i.fileName)" > -->
+        <a href="{{downLodeFile}}"  (click)="downlode(i.fileName)" download>download</a>
+
+
+      </div>
+
+
+  </mat-card >
+
+
+</div>
+
+
+
+</mat-expansion-panel>
+
+
+</mat-accordion>
+
+
+<!-- for ppt -->
+
+  <mat-accordion>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+
+    <mat-panel-title>
+        <img mat-card-avatar src="/assets/ppt-3.png">
+            <div class="titlediv">Ppt</div>
+       </mat-panel-title>
+
+
+
+
+
+  </mat-expansion-panel-header>
+
+    <div *ngFor="let i of ppt">
+
+  <mat-card class="example-card">
+
+
+      <mat-card-title >{{"FileName : "+i.fileName}}</mat-card-title>
+      <mat-card-title >{{"DateCreated :"+i.dateCreated}}</mat-card-title>
+
+    <div class="btndiv">
+      <img src="/assets/delete.png"  alt="" class="btndesign"    (click)="delete(i._id,i.fileType)" >
+      <img src="/assets/edit.png" alt="" class="btndesign"    (click)="update(i._id)" >
+      <a href="{{downLodeFile}}"  (click)="downlode(i.fileName)" download>download</a>
+
+
+    </div>
+
+  </mat-card >
+
+
+</div>
+
+
+
+</mat-expansion-panel>
+
+
+</mat-accordion>
+
+<!-- for msword -->
+
+
+  <mat-accordion>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+
+    <mat-panel-title>
+        <img mat-card-avatar src="/assets/Word-icon.png">
+            <div class="titlediv">MsWord</div>
+
+    </mat-panel-title>
+
+
+  </mat-expansion-panel-header>
+
+    <div *ngFor="let i of msword">
+
+  <mat-card class="example-card">
+
+
+      <mat-card-title >{{"FileName : "+i.fileName}}</mat-card-title>
+      <mat-card-title >{{"DateCreated :"+i.dateCreated}}</mat-card-title>
+
+      <div class="btndiv">
+
+        <img src="/assets/delete.png"  alt="" class="btndesign"   (click)="delete(i._id,i.fileType)" >
+        <img src="/assets/edit.png" alt="" class="btndesign"    (click)="update(i._id)" >
+
+         <a href="{{downLodeFile}}" target="_blank" (click)="downlode(i.fileName)" download>download</a>
+
+
+          <!-- <a href="{{fileload}}"+"/fileType"+"/fileName" download>downlode</a> -->
+
+      </div>
+
+  </mat-card >
+
+
+</div>
+
+
+
+</mat-expansion-panel>
+
+
+</mat-accordion>

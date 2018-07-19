@@ -1,0 +1,19 @@
+<div class="example-container">
+<input type="file" class="fileControl" name="file" (change)="changeListner($event)" />
+
+  <mat-form-field>
+    <input matInput placeholder="projectName"  [(ngModel)]='fileData.projectName' >
+
+  </mat-form-field>
+
+  <!-- <mat-form-field>
+    <input matInput placeholder="dateCreated"  [(ngModel)]='fileData.dateCreated' >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="dateUpdated"  [(ngModel)]='fileData.dateUpdated' >
+  </mat-form-field> -->
+
+<button type="button" (click)="create()">insert</button>
+
+</div>
